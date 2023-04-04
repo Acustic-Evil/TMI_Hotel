@@ -1,0 +1,335 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    color: #232528;
+    -webkit-font-smoothing: antialiased;
+
+    background-color: #D0D0D0;
+}
+
+
+/* Buttons
+===================*/
+
+.btn {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 150px;
+
+    font-size: 13px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
+
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.btn--white {
+    background-color: #fff;
+}
+
+.btn--white:hover {
+    background-color: #ede356;
+    color: #fff;
+}
+
+.btn--grey {
+    margin: 30px;
+
+    color: #fff;
+    background-color: #7f7f7f;
+}
+
+
+.btn--grey:hover {
+    background-color: #b5af65;
+}
+
+
+/* Header
+===================*/
+
+.header {
+    width: 100%;
+    height: 100px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items:center;
+    padding: 35px 0;
+
+    text-align: center;
+}
+
+
+/* Nav
+===================*/
+
+.nav {
+    display: flex;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.nav__link {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+
+    transition: all .3s linear;
+}
+
+.nav__link:first-child {
+    margin-left: 0px;
+}
+
+.nav__link:hover {
+    color: #ede356;
+
+    text-decoration: underline 2px;
+}
+
+
+/* Intro
+===================*/
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+
+    height: 700px;
+    padding: 100px 0 50px;
+}
+
+.intro--banquet{
+    background: url('../img/banquet_hall_2.jpg') bottom no-repeat;
+    background-size: cover;
+}
+
+.intro--bar {
+    background: url('../img/bar_1.jpg') bottom no-repeat;
+    background-size: cover;
+}
+
+.intro--deluxe  {
+    background: url('../img/deluxe_appartment_2.jpg') bottom no-repeat;
+    background-size: cover;
+}
+
+.intro--luxury {
+    background: url('../img/luxury_appartment_1.jpg') bottom no-repeat;
+    background-size: cover;
+}
+
+.intro--onepluxury {
+    background: url('../img/onep_luxury_appartment_3.jpg') bottom no-repeat;
+    background-size: cover;
+}
+
+.intro--pool {
+    background: url('../img/pool_2.jpg') bottom no-repeat;
+    background-size: cover;
+}
+
+.intro--restaurant {
+    background: url('../img/restaurant_1.jpg') bottom no-repeat;
+    background-size: cover;
+}
+
+.intro--veranda {
+    background: url('../img/veranda_3.jpg') bottom no-repeat;
+    background-size: cover;
+}
+
+.intro__inner {
+    width:100%;
+    max-width: 970px;
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.intro__link {
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+
+    transition: all .3s linear;
+}
+
+.intro__link:hover {
+    color: #ede356;
+}
+
+
+/* Container
+===================*/
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Rooms and Photos
+===================*/
+
+.photos {
+    padding: 50px 0 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.photo__item {
+    width: 33%;
+    height: 450px;
+
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+
+    position: relative;
+    overflow: hidden;
+
+}
+
+.room__description {
+    margin-bottom: 50px;
+}
+
+.room__button {
+    text-align: center;
+}
+
+.room__photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.room__title{
+    text-align: center;
+    text-transform: uppercase;
+
+    font-size: 50px;
+    color: #fff;
+
+    padding-bottom: 20px;
+}
+
+.room__text {
+    font-size: 25px;
+}
+
+.room__included {
+    margin-top: 50px;
+    padding: 50px;
+
+    background-color: #b8b4a1 ;
+}
+
+.room__included__inner {
+    display: flex;
+    width: 100%;
+}
+
+.room__included__block {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    color: #fff;
+    font-size: 16px;
+}
+
+.room__included__block:first-child {
+    margin: 0;
+}
+
+
+/* Footer
+===================*/
+
+.footer {
+    background-color: #3e3e3e;
+
+
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__block {
+    width: 25%;
+}
+
+.footer__title{
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    font-size: 20px;
+    color: #fff;
+}
+
+.footer__link {
+    text-decoration: none;
+    color: #fff;
+    opacity: .75;
+    padding: 5px 0 5px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: opacity .3s linear;
+}
+
+.footer__link:hover {
+    opacity: 1;
+}
+
+.address {
+    color:  #fff;
+}
+
+
+

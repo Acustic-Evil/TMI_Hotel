@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/guest_list.css">
+</head>
+
+<body>
+<main>
+    <!-- Intro -->
+    <header class="intro ">
+        <div class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <nav class="nav">
+                        <a href="sign_in.html" class="nav__link">Войти</a>
+                        <a href="sign_up.html" class="nav__link">Регистрация</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="intro__inner">
+                <a href="index.html" class="intro__link">Hotel TMI</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features -->
+
+    <div class="container">
+        <div class="input__search">
+            <input class="input__lists" type="text" placeholder="Поиск">
+            <button class="search">Фильтр</button>
+        </div>
+        <div class="guests">
+            <div class="lists">Список гостей</div>
+            <div class="data__flex">
+                <div class="data">Иванов Иван Иванович телефон почта</div>
+                <button id="modal-btn" class="search form ">Коментарий</button>
+            </div>
+
+
+        </div>
+    </div>
+</main>
+
+
+<!-- Roooms -->
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer_inner">
+
+            <div class="footer_bock">
+                <div class="footer_title">Размещение</div>
+                <a href="onep_luxury_appartment.html" class="footer_link">Люкс с одноместным размещением </a>
+                <a href="luxury_appartment.html" class="footer_link">Люкс с двуместным размещением </a>
+                <a href="deluxe_appartment.html" class="footer_link">Апартаменты делюкс </a>
+            </div>
+
+            <div class="footer_block">
+                <div class="footer_title">Предоставляемое пространство</div>
+                <a href="pool.html" class="footer_link">Бассейн </a>
+                <a href="banquet_hall.html" class="footer_link">Банкетный зал</a>
+            </div>
+
+            <div class="footer_block">
+                <div class="footer_title">Рестораны</div>
+                <a href="veranda.html" class="footer_link">Веранда</a>
+                <a href="bar.html" class="footer_link">Клубный бар</a>
+                <a href="restaurant.html" class="footer_link">TMI Restaurant</a>
+            </div>
+
+            <div class="footer_block">
+                <div class="footer_title">О гостинице</div>
+                <address>
+                    <div>Улица подводная, дом 83</div>
+                    <div>+79017295584</div>
+                </address>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<form action="" id="modal-win" class="modal" method="post">
+    <div class="modal-window">
+        <div class="form__title">Коментарий</div>
+        <div class="close" id="modal-close">Х</div>
+        <div><textarea class="form__input"></textarea></div>
+        <div><input type="submit" class="search" value="Вход"></div>
+    </div>
+    <div class="modal over"></div>
+</form>
+
+
+<script>
+    let popupTougle = document.querySelectorAll('.search.form')
+    popup = document.getElementById('modal-win'),
+        popupClose = document.getElementsByClassName('close');
+
+    popupTougle.forEach(function (btn) {
+        btn.onclick = function () {
+            popup.style.display = 'flex';
+        }
+    })
+
+    popupClose.onclick = function () {
+        popup.style.display = 'none';
+    }
+
+    window.onclick = function (e) {
+        if (e.target === popup) {
+            popup.style.display = 'none';
+        }
+    }
+</script>
+
+
+</body>
+</html>
