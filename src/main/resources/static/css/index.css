@@ -88,7 +88,11 @@ body {
 
     height: 300px;
     padding: 100px 0 50px;
-    background: url('/static/img/hotel_view.jpg') center no-repeat;
+
+}
+
+.intro--back {
+    background: url('../img/hotel_view.jpg') center no-repeat;
     background-size: cover;
 }
 
