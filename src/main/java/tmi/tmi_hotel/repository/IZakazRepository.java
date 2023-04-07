@@ -10,12 +10,4 @@ import java.util.List;
 
 @Repository
 public interface IZakazRepository extends JpaRepository<Zakaz, Integer> {
-
-    Zakaz findZakazById_zakaz(Integer id);
-
-    List<Zakaz> findZakazByGuest(Guest guest);
-
-    List<Zakaz> findZakazByEmployee(Employee employee);
-
-    void deleteZakazById_zakaz(Integer id);
 }
