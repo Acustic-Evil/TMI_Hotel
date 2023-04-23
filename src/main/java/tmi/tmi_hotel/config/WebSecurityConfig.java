@@ -1,0 +1,46 @@
+package tmi.tmi_hotel.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+@Configuration
+public class WebSecurityConfig {
+
+    @Autowired
+    UserDetailsServiceConfig adminService;
+
+    @Bean
+    public void SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+        httpSecurity
+                .csrf().disable()
+                .httpBasic()
+                .and()
+                .authorizeRequests()
+                .antMatchers("/", "/?").permitAll()
+                .antMatchers("/admin/**", "/?").hasAuthority("admin")
+                .and()
+                .formLogin()
+                .loginPage("/sign_in")
+                .defaultSuccessUrl("/admin")
+                .permitAll()
+                .and()
+                .logout()
+                .logoutSuccessUrl("/")
+                .permitAll();
+    }
+
+    @Autowired
+    @Async
+    public void configure(AuthenticationManagerBuilder auth) throws Exception{
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        auth
+                .userDetailsService(adminService)
+                .passwordEncoder(passwordEncoder);
+    }
+}

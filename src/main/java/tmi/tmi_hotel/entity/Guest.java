@@ -1,7 +1,13 @@
 package tmi.tmi_hotel.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 public class Guest {
 
@@ -25,6 +31,4 @@ public class Guest {
 
     private String password;
 
-    public Guest() {
-    }
 }

@@ -1,10 +1,15 @@
 package tmi.tmi_hotel.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table
 public class Booking {
@@ -20,7 +25,4 @@ public class Booking {
     private LocalDateTime checkInDate;
 
     private LocalDateTime checkOutDate;
-
-    public Booking() {
-    }
 }

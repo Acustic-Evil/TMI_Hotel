@@ -1,7 +1,16 @@
 package tmi.tmi_hotel.entity;
 
-import jakarta.persistence.*;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 public class Employee {
 
@@ -25,9 +34,5 @@ public class Employee {
     private String jobTitle; // role
 
     private String department;
-
-    public Employee() {
-    }
-
 
 }

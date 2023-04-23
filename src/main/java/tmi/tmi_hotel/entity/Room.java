@@ -1,9 +1,15 @@
 package tmi.tmi_hotel.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table
 public class Room {
@@ -25,6 +31,4 @@ public class Room {
 
     private Float pricePerNight;
 
-    public Room() {
-    }
 }

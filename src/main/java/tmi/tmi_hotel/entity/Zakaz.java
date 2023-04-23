@@ -1,9 +1,15 @@
 package tmi.tmi_hotel.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 public class Zakaz { // TODO: rename (order)
 
@@ -22,8 +28,5 @@ public class Zakaz { // TODO: rename (order)
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idEmployee")
     private Employee employee;
-
-    public Zakaz() {
-    }
 
 }
