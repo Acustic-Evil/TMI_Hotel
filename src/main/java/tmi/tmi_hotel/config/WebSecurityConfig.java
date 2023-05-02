@@ -1,3 +1,4 @@
+/*
 package tmi.tmi_hotel.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,4 +44,4 @@ public class WebSecurityConfig {
                 .userDetailsService(adminService)
                 .passwordEncoder(passwordEncoder);
     }
-}
+}*/
