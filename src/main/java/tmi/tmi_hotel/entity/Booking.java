@@ -1,6 +1,7 @@
 package tmi.tmi_hotel.entity;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
