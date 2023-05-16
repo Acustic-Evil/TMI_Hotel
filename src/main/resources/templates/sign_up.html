@@ -32,30 +32,11 @@
 <!-- Wrapper -->
 <div class="wrapper">
     <h1>Регистрация</h1>
-    <form action="#" th:object="${user}" method="post">
-        <label th:text="#{label.user.email}">
-            <input th:field="*{email}" type="email" placeholder="Почта" required/>
-        </label>
-        <p th:each="error : ${#fields.errors('email')}"
-           th:text="${error}">Validation error</p>
-        <label th:text="#{label.user.firstName}">
-            <input th:field="*{firstName}" type="text" placeholder="Имя" required/>
-        </label>
-        <p th:each="error: ${#fields.errors('firstName')}"
-           th:text="${error}">Validation error</p>
-        <label th:text="#{label.user.lastName}">
-            <input th:field="*{lastName}" type="text" placeholder="Фамилия" required/>
-        </label>
-        <p th:each="error : ${#fields.errors('lastName')}"
-           th:text="${error}">Validation error</p>
-        <label th:text="#{label.user.password}">
-            <input th:field="*{password}" type="password" placeholder="Пароль" required/>
-        </label>
-        <p th:each="error : ${#fields.errors('password')}"
-           th:text="${error}">Validation error</p>
-        <label th:text="#{label.user.confirmPass}">
-            <input th:field="*{matchingPassword}" type="password" placeholder="Повторите пароль" required/>
-        </label>
+    <form action="#" method="post">
+        <input type="text" placeholder="Почта">
+        <input type="text" placeholder="Имя">
+        <input type="password" placeholder="Пароль">
+        <input type="password" placeholder="Повторите пароль">
     </form>
     <button>Зарегистрироваться</button>
     <div class="member">
