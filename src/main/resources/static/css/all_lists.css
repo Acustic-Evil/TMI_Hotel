@@ -25,9 +25,13 @@ body {
 }
 
 
-main{
+/* Main
+===================*/
+
+main {
     min-height: calc(100vh - 122px);
 }
+
 /* Header
 ===================*/
 
@@ -44,12 +48,11 @@ main{
 .header_inner {
     display: flex;
     justify-content: flex-end;
-    align-items:center;
+    align-items: center;
     padding: 35px 0;
 
     text-align: center;
 }
-
 
 /* Nav
 ===================*/
@@ -86,13 +89,22 @@ main{
 ===================*/
 
 .intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 300px;
     padding: 100px 0 50px;
+
+}
+
+.intro--back {
     background: url('../img/hotel_view.jpg') center no-repeat;
     background-size: cover;
 }
 
 .intro_inner {
-    width:100%;
+    width: 100%;
     max-width: 970px;
     margin: 0 auto;
 
@@ -105,7 +117,7 @@ main{
 
     color: #fff;
     font-size: 50px;
-    font-weight: 700;
+    font-weight: 600;
 
     transition: all .3s linear;
 }
@@ -125,66 +137,72 @@ main{
     padding: 0 15px;
 }
 
-/* MAIN
+
+/* Main
 ===================*/
 
-.input_lists{
-    padding: 5px 40px;
+.list_link{
+    color: #fff;
     font-size: 25px;
-    width: 80%;
-    margin: 10px;
-    border-radius: 5px;
-    border: none;
-}
-
-.input_lists:focus{
-    outline: none;
-    font-size: 25px;
-}
-
-.input_search{
-    display: flex;
-    margin: 15px 0;
-    padding: 5px;
-
-}
-
-.search{
-    margin: 10px auto;
-    padding: 5px;
-    font-size: 25px;
-    width: 170px;
-}
-
-
-.lists{
-    margin: 0 25px 15px;
-    padding: 5px;
-    font-size: 25px;
-    display: flex;
-    flex-direction: column;
-
-}
-
-.sub_lists{
-    margin: 5px;
-    padding: 5px;
-    color: #000;
     text-decoration: none;
-    width: 350px;
-}
-.sub_lists:hover{
+
     margin: 5px;
     padding: 5px;
-    color: #232528;
-    text-decoration: underline;
+    width: 350px;
+
+    transition: all .3s linear;
+}
+.list_link:hover{
+    margin: 5px;
+    padding: 5px;
+    color: #ede356;
+
+    text-decoration: underline 2px;
+}
+.list_item {
+    list-style-type: none;
+
 }
 
-
-/* MAIN
+/* Buttons
 ===================*/
 
+.btn {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 150px;
 
+    font-size: 13px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
+
+    background-color: #fff;
+    transition: all 0.3s ease;
+
+}
+
+.btn--white {
+    background-color: #fff;
+}
+
+.btn--white:hover {
+    background-color: rgba(232, 69, 69, .9);
+    color: #fff;
+}
+
+.btn--grey {
+    margin: 30px;
+
+    color: #fff;
+    background-color: #7f7f7f;
+}
+
+.btn--grey:hover {
+    background-color: #b5af65;
+}
 
 
 /* Footer
@@ -205,7 +223,7 @@ main{
     width: 25%;
 }
 
-.footer_title{
+.footer_title {
     padding-top: 10px;
     padding-bottom: 10px;
 
@@ -230,5 +248,5 @@ main{
 }
 
 address {
-    color:  #fff;
+    color: #fff;
 }

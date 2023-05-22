@@ -4,49 +4,45 @@
     <meta charset="UTF-8">
     <title>Hotel TMI</title>
     <link rel="icon" type="image/png>" href="/static/img/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="/static/css/all_lists.css">
 </head>
-
 <body>
-<main>
+
 <!-- Intro -->
-<div class="intro">
-    <div class="header">
-        <div class="container">
-            <div class="header__inner">
-                <nav class="nav">
-                    <a href="/sign_in" class="nav__link">Войти</a>
-                    <a href="/sign_up" class="nav__link">Регистрация</a>
-                </nav>
+<main>
+    <header class="intro intro--back">
+        <div class="header">
+            <div class="container">
+                <div class="header_inner">
+                    <nav class="nav">
+                        <a class="nav_link" href="/sign_in">Войти</a>
+                        <a class="nav_link" href="/sign_up">Регистрация</a>
+                    </nav>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="intro__inner">
-            <a href="/main" class="intro__link">Hotel TMI</a>
+        <div class="container">
+            <div class="intro_inner">
+                <a class="intro_link" href="/main">Hotel TMI</a>
+            </div>
         </div>
-    </div>
-</div>
+    </header>
 
 <!-- Features -->
 <div class="container">
-    <div class="input__search">
-        <label>
-            <input class = "input__lists" type="text" placeholder="Поиск">
-        </label>
-        <button class= "search">Фильтр</button>
-    </div>
+
     <div class="lists">
-        <a class="sub__lists" href="#">Список гостей</a>
-        <a class="sub__lists" href="#">Список сотрудников</a>
-        <a class="sub__lists" href="#">Список бронирования</a>
+        <ul>
+            <li class="list_item"><a class="list_link" href="#">Список гостей</a></li>
+            <li class="list_item"><a class="list_link" href="#">Список сотрудников</a></li>
+            <li class="list_item"><a class="list_link" href="#">Список бронирования</a></li>
+        </ul>
     </div>
-    
-    
+
 </div>
 </main>
-<!-- Roooms -->
 
 <!-- Footer -->
 <footer class="footer">
