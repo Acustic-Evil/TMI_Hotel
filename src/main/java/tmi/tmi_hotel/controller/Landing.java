@@ -21,4 +21,9 @@ public class Landing {
         return "sign_up";
     }
 
+    @RequestMapping("/book")
+    public String getBook() {
+        return "book";
+    }
+
 }
