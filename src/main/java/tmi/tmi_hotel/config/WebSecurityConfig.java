@@ -1,3 +1,4 @@
+/*
 package tmi.tmi_hotel.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,11 +46,14 @@ public class WebSecurityConfig {
         return http.build();
     }
 
-    /*@Async
+    */
+/*@Async
     public void configure(AuthenticationManagerBuilder auth) throws Exception{
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         auth
                 .userDetailsService(userDetailsServiceConfig)
                 .passwordEncoder(passwordEncoder);
-    }*/
+    }*//*
+
 }
+*/

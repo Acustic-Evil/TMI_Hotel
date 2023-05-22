@@ -1,4 +1,3 @@
-/*
 package tmi.tmi_hotel.controller;
 
 import org.springframework.stereotype.Controller;
@@ -32,4 +31,3 @@ public class Entertainments {
         return "veranda";
     }
 }
-*/
