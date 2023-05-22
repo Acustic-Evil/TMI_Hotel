@@ -25,6 +25,8 @@ public class Employee {
 
     private String lastName;
 
+    private String middleName;
+
     private String phoneNumber;
 
     private String email;

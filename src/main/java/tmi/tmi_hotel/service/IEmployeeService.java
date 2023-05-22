@@ -11,4 +11,8 @@ public interface IEmployeeService {
     public void deleteById(Long id);
     public Employee updateEmployee(Employee employee);
     public Employee addNewEmployee(Employee employee);
+
+    public Employee findByEmail(String email);
+
+    public Employee findByLastName(String lastName);
 }
