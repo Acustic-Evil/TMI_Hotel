@@ -15,11 +15,11 @@ public class GuestService implements IGuestService {
 
     @Override
     public List<Guest> getAllGuests() {
-        return guestRepository.getAllByRole("guest");
+        return guestRepository.findAll();
     }
 
     @Override
-    public Guest getGuest(String email) {
-        return guestRepository.getGuestByEmail(email);
+    public Guest getGuest(String lastName) {
+        return guestRepository.getGuestByLastName(lastName);
     }
 }

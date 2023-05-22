@@ -10,4 +10,6 @@ import java.util.List;
 public interface IGuestRepository extends JpaRepository<Guest, Integer> {
     List<Guest> getAllByRole(String role);
     Guest getGuestByEmail(String email);
+
+    Guest getGuestByLastName(String lastName);
 }
