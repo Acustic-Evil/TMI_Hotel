@@ -196,18 +196,21 @@ main{
 }
 
 .hoverable {
+    font-size: 20px;
     position: relative;
     display: inline-block;
 }
 
 .hoverable .tooltip {
+
+
     display: none;
     width: 200px;
     background-color: #000;
     color: #fff;
     text-align: center;
     border-radius: 6px;
-    padding: 5px;
+    padding: 10px;
     position: absolute;
     z-index: 1;
     bottom: 125%;
@@ -218,6 +221,7 @@ main{
 }
 
 .hoverable:hover .tooltip {
+    word-break: break-all;
     display: block;
     opacity: 1;
 }
