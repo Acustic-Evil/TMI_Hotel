@@ -32,5 +32,6 @@ public class Guest {
     private String role;
 
     private String password;
+    private String matchingPassword;
 
 }

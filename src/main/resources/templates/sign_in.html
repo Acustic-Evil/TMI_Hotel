@@ -30,10 +30,16 @@
 
 <!-- Wrapper -->
 <div class="wrapper">
-    <h1>Войти</h1>
-    <form action="#">
-        <input type="text" placeholder="Почта">
-        <input type="password" placeholder="Пароль">
+    <h1 th:if="${authenticated == false}">Войти</h1>
+    <div th:if="${param.error}">
+        Invalid email and password.
+    </div>
+    <div th:if="${param.logout}">
+        You have been logged out.
+    </div>
+    <form th:action="@{/login}" method="post">
+        <input type="email" placeholder="Почта" name="username">
+        <input type="password" placeholder="Пароль" name="password">
     </form>
     <button>Войти</button>
     <div class="member">
