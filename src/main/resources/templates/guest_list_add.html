@@ -33,24 +33,19 @@
     <!-- Features -->
 
     <div class="container">
-        <form method="post" action="/admin/search">
-            <div class="input_search">
-                <input class="input_lists" type="text" name="email" placeholder="E-mail гостя">
-                <button class="search" type="submit">Поиск</button>
-            </div>
-        </form>
 
-
-        <div class="employees">
-            <div class="lists">Список сотрудников</div>
-            <div class="data_flex" th:each="staf:${staff}">
-                <div class="data" th:text="${staf.getLastName()}"></div>
-                <div class="data" th:text="${staf.getFirstName()}"></div>
-                <div class="data" th:text="${staf.getMiddleName()}"></div>
-                <div class="data" th:text="${staf.getPhoneNumber()}"></div>
-                <div class="data" th:text="${staf.getEmail()}"></div>
-                <div class="data" th:text="${staf.getJobTitle()}"></div>
-                <div class="data" th:text="${staf.getDepartment()}"></div>
+        <div class="guests">
+            <div class="data_flex" th:each="guest:${guests}">
+                <form th:action="@{/add}" method="post">
+                    <div class="data"><input type="text" name="Фамилия" required></div>
+                    <div class="data"><input type="text" name="Имя" required></div>
+                    <div class="data"><input type="text" name="Отчество" required></div>
+                    <div class="data"><input type="text" name="Номер телефона" required></div>
+                    <div class="data"><input type="text" name="Почта" required></div>
+                    <div class="data"><input type="text" name="Должность" required></div>
+                    <div class="data"><input type="text" name="Департамент" required></div>
+                    <div class="data"><button type="submit">Добавить</button></div>
+                </form>
             </div>
 
         </div>

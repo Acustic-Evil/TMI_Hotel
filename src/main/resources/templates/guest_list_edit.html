@@ -33,24 +33,18 @@
     <!-- Features -->
 
     <div class="container">
-        <form method="post" action="/admin/search">
-            <div class="input_search">
-                <input class="input_lists" type="text" name="email" placeholder="E-mail гостя">
-                <button class="search" type="submit">Поиск</button>
-            </div>
-        </form>
 
-
-        <div class="employees">
-            <div class="lists">Список сотрудников</div>
-            <div class="data_flex" th:each="staf:${staff}">
-                <div class="data" th:text="${staf.getLastName()}"></div>
-                <div class="data" th:text="${staf.getFirstName()}"></div>
-                <div class="data" th:text="${staf.getMiddleName()}"></div>
-                <div class="data" th:text="${staf.getPhoneNumber()}"></div>
-                <div class="data" th:text="${staf.getEmail()}"></div>
-                <div class="data" th:text="${staf.getJobTitle()}"></div>
-                <div class="data" th:text="${staf.getDepartment()}"></div>
+        <div class="guests">
+            <div class="data_flex" th:each="guest:${guests}">
+                <form th:action=" '/edit/' + ${guest.getId}" method="post">
+                    <div class="data"><input th:value="${guest.getLastName()}" type="text" name="Фамилия"></div>
+                    <div class="data"><input th:value="${guest.getFirstName()}" type="text" name="Имя"></div>
+                    <div class="data"><input th:value="${guest.getMiddleName()}" type="text" name="Отчество"></div>
+                    <div class="data"><input th:value="${guest.getPhoneNumber()}" type="text" name="Номер телефона"></div>
+                    <div class="data"><input th:value="${guest.getEmail()}" type="text" name="Почта"></div>
+                    <div class="data"><input th:value="${guest.getAboutComment()}" type="text" name="Комментарий"></div>
+                    <div class="data"><button type="submit">Изменить</button></div>
+                </form>
             </div>
 
         </div>
