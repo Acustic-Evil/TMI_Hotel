@@ -38,7 +38,7 @@ public class Privileges {
         return "staff_list";
     }
 
-    @PostMapping("/search")
+    @PostMapping("/search_employee")
     public String findEmployee(@RequestParam String last_name, Model model){
         Employee employee = employeeService.findByLastName(last_name);
         model.addAttribute("employee", employee);
@@ -46,7 +46,7 @@ public class Privileges {
     }
 
 
-    @PostMapping("/search")
+    @PostMapping("/search_guest")
     public String findGuest(@RequestParam String lastName, Model model){
         Guest guest = guestService.getGuest(lastName);
         model.addAttribute("guests", guest);
