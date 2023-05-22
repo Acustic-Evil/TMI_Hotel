@@ -9,17 +9,17 @@ public class Apartments {
 
     @RequestMapping("/deluxe")
     public String getDeluxeApartment() {
-        return "deluxe_appartment";
+        return "/apartments/deluxe_appartment";
     }
 
     @RequestMapping("/luxury")
     public String getLuxuryApartment() {
-        return "luxury_apartment";
+        return "/apartments/luxury_apartment";
     }
 
     @RequestMapping("/onep_luxury")
     public String getOnepLuxuryApartment() {
-        return "onep_luxury_apartment";
+        return "/apartments/onep_luxury_apartment";
     }
 
 }
