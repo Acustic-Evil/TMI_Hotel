@@ -1,10 +1,9 @@
-/*
 package tmi.tmi_hotel.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
-@RequestMapping("entertainments")
+@RequestMapping("/entertainments")
 public class Entertainments {
 
     @RequestMapping("/banquet_hall")
@@ -32,4 +31,3 @@ public class Entertainments {
         return "veranda";
     }
 }
-*/

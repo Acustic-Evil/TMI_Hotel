@@ -1,3 +1,4 @@
+/*
 package tmi.tmi_hotel.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
@@ -31,4 +32,4 @@ public class UserDetailsServiceConfig implements UserDetailsService {
         }
         throw new UsernameNotFoundException("User not authorized.");
     }
-}
+}*/

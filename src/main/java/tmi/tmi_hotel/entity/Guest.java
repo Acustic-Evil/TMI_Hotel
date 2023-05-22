@@ -21,6 +21,8 @@ public class Guest {
 
     private String lastName;
 
+    private String middleName;
+
     private String email;
 
     private String phoneNumber;

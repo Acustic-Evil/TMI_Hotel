@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -17,15 +17,15 @@
             <div class="container">
                 <div class="header_inner">
                     <nav class="nav">
-                        <a href="sign_in.html" class="nav_link">Войти</a>
-                        <a href="sign_up.html" class="nav_link">Регистрация</a>
+                        <a href="/sign_in" class="nav_link">Войти</a>
+                        <a href="/sign_up" class="nav_link">Регистрация</a>
                     </nav>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="intro_inner">
-                <a href="index.html" class="intro_link">Hotel TMI</a>
+                <a href="/main" class="intro_link">Hotel TMI</a>
             </div>
         </div>
     </header>
@@ -33,15 +33,27 @@
     <!-- Features -->
 
     <div class="container">
-        <div class="input_search">
-            <input class="input_lists" type="text" placeholder="Поиск">
-            <button class="search">Фильтр</button>
-        </div>
+        <form method="post" action="/admin/search">
+            <div class="input_search">
+                <input class="input_lists" type="text" name="email" placeholder="E-mail гостя">
+                <button class="search" type="submit">Поиск</button>
+            </div>
+        </form>
+
+
         <div class="guests">
             <div class="lists">Список гостей</div>
-            <div class="data_flex">
-                <div class="data">Иванов Иван Иванович телефон почта</div>
-                <button id="modal-btn" class="search form ">Коментарий</button>
+            <div class="data_flex" th:each="guest:${guests}">
+                <div class="data" th:text="${guest.getLastName()}"><!--Иванов--> </div>
+                <div class="data" th:text="${guest.getFirstName()}"><!--Иван--></div>
+                <div class="data" th:text="${guest.getMiddleName()}"><!--Иванович--></div>
+                <div class="data" th:text="${guest.getPhoneNumber()}"><!--телефон--></div>
+                <div class="data" th:text="${guest.getEmail()}"><!--почта--></div>
+                <div class="hoverable">
+                    Комментарий
+                    <div class="data tooltip" th:text="${guest.getAboutComment()}"></div>
+                </div>
+                <!--<button id="modal-btn" class="search form">Подробнее</button>-->
             </div>
 
 
@@ -89,23 +101,24 @@
         </div>
     </div>
 </footer><!-- /footer -->
-<form action="" id="modal-win" class="modal" method="post">
+<form action="" id="modal-win" class="modal" method="post" th:each="guest:${guests}">
     <div class="modal-window">
         <div class="form_title">Коментарий</div>
         <div class="close" id="modal-close">Х</div>
         <div><textarea class="form_input"></textarea></div>
-        <div><input type="submit" class="search" value="Вход"></div>
+        <div th:text="${guest.getAboutComment()}"></div>
+        <div><input type="submit" class="search" value="Ввод"></div>
     </div>
     <div class="modal over"></div>
 </form>
 
 
 <script>
-    let popupTougle = document.querySelectorAll('.search.form')
-    popup = document.getElementById('modal-win'),
-        popupClose = document.getElementsByClassName('close');
+    let popupToggle = document.querySelectorAll('.search.form')
+    popup = document.getElementById('modal-win')
+    popupClose = document.getElementsByClassName('close')
 
-    popupTougle.forEach(function (btn) {
+    popupToggle.forEach(function (btn) {
         btn.onclick = function () {
             popup.style.display = 'flex';
         }
