@@ -43,12 +43,14 @@
 
         <div class="guests">
             <div class="lists">Список гостей</div>
-            <div class="data_flex" th:each="guest:${guests}">
-                <div class="data" th:text="${guest.getLastName()}"><!--Иванов--> </div>
-                <div class="data" th:text="${guest.getFirstName()}"><!--Иван--></div>
-                <div class="data" th:text="${guest.getMiddleName()}"><!--Иванович--></div>
-                <div class="data" th:text="${guest.getPhoneNumber()}"><!--телефон--></div>
-                <div class="data" th:text="${guest.getEmail()}"><!--почта--></div>
+            <div class="data_flex" th:each="staf:${staff}">
+                <div class="data" th:text="${staf.getLastName()}"><!--Иванов--> </div>
+                <div class="data" th:text="${staf.getFirstName()}"><!--Иван--></div>
+                <div class="data" th:text="${staf.getMiddleName()}"><!--Иванович--></div>
+                <div class="data" th:text="${staf.getPhoneNumber()}"><!--телефон--></div>
+                <div class="data" th:text="${staf.getEmail()}"><!--почта--></div>
+                <div class="data" th:text="${staf.getJobTitle()}"><!--почта--></div>
+                <div class="data" th:text="${staf.getDepartment()}"><!--почта--></div>
                 <div class="hoverable">
                     Комментарий
                     <div class="data tooltip" th:text="${guest.getAboutComment()}"></div>
