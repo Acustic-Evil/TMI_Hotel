@@ -14,12 +14,12 @@ public class Apartments {
 
     @RequestMapping("/luxury")
     public String getLuxuryApartment() {
-        return "luxury_appartment";
+        return "luxury_apartment";
     }
 
     @RequestMapping("/onep_luxury")
     public String getOnepLuxuryApartment() {
-        return "onep_luxury_appartment";
+        return "onep_luxury_apartment";
     }
 
 }
