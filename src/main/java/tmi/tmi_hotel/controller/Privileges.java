@@ -38,6 +38,11 @@ public class Privileges {
         return "staff_list";
     }
 
+    @GetMapping("/bookings_list")
+    public String getBookingPage(Model model) {
+        return "booking_list";
+    }
+
     @PostMapping("/search_employee")
     public String findEmployee(@RequestParam String last_name, Model model){
         Employee employee = employeeService.findByLastName(last_name);

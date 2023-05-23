@@ -129,6 +129,8 @@ main{
     min-height: calc(100vh - 122px);
 }
 
+
+
 .input_book{
     width: 92%;
     outline: none;
@@ -186,12 +188,6 @@ main{
     display: flex;
     flex-direction: column;
 }
-
-
-/* MAIN
-===================*/
-
-
 
 
 /* Footer

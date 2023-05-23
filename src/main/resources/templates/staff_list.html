@@ -35,7 +35,7 @@
     <div class="container">
         <form method="post" action="/admin/search">
             <div class="input_search">
-                <input class="input_lists" type="text" name="email" placeholder="E-mail гостя">
+                <input class="input_lists" type="text" name="email" placeholder="Фамилия сотрудника">
                 <button class="search" type="submit">Поиск</button>
             </div>
         </form>
@@ -50,7 +50,7 @@
                 <div class="data" th:text="${staf.getPhoneNumber()}"></div>
                 <div class="data" th:text="${staf.getEmail()}"></div>
                 <div class="data" th:text="${staf.getJobTitle()}"></div>
-                <div class="data" th:text="${staf.getDepartment()}"></div>
+                <div class="data" th:text="${staf.getDepartment()}">x</div>
             </div>
 
         </div>

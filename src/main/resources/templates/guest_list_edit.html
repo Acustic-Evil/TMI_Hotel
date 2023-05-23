@@ -33,8 +33,8 @@
     <!-- Features -->
 
     <div class="container">
-
         <div class="guests">
+
             <div class="data_flex" th:each="guest:${guests}">
                 <form th:action=" '/edit/' + ${guest.getId}" method="post">
                     <div class="data"><input th:value="${guest.getLastName()}" type="text" name="Фамилия"></div>
