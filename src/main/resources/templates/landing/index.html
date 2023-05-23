@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Hotel TMI</title>
-    <link rel="icon" type="image/png>" href="/static/img/favicon.png">
+    <link href="/static/img/favicon.png" rel="icon" type="image/png>">
     <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/index.css">
+    <link href="/static/css/index.css" rel="stylesheet">
 </head>
 <body>
 
@@ -16,15 +16,16 @@
         <div class="container">
             <div class="header_inner">
                 <nav class="nav">
-                    <a href="/sign_in" class="nav_link">Войти</a>
-                    <a href="/sign_up" class="nav_link">Регистрация</a>
+                    <a class="nav_link" href="/sign_in">Войти</a>
+                    <a class="nav_link" href="/sign_up">Регистрация</a>
+                    <a class="nav_link" href="/admin/all_lists" th:if="authenticated">Админ</a>
                 </nav>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="intro_inner">
-            <a href="/main" class="intro_link">Hotel TMI</a>
+            <a class="intro_link" href="/main">Hotel TMI</a>
         </div>
     </div>
 </header>
@@ -52,30 +53,30 @@
         <div class="rooms_inner">
 
             <div class="room">
-                <img src="/static/img/deluxe_appartament.jpg" alt="" class="room_photo">
+                <img alt="" class="room_photo" src="/static/img/deluxe_appartament.jpg">
                 <div class="room_content">
                     <div class="room_title">Апартаменты делюкс</div>
-                    <a href="/apartment/deluxe" class="btn btn--white">Подробнее</a>
+                    <a class="btn btn--white" href="/apartment/deluxe">Подробнее</a>
                 </div>
             </div>
 
             <div class="room">
-                <img src="/static/img/luxury_appartment_1.jpg" alt="" class="room_photo">
+                <img alt="" class="room_photo" src="/static/img/luxury_appartment_1.jpg">
                 <div class="room_content">
                     <div class="room_title">Люкс</div>
-                    <a href="/apartment/luxury" class="btn btn--white">Подробнее</a>
+                    <a class="btn btn--white" href="/apartment/luxury">Подробнее</a>
                 </div>
             </div>
 
             <div class="room">
-                <img src="/static/img/onep_luxury_appartment_1.jpg" alt="" class="room_photo">
+                <img alt="" class="room_photo" src="/static/img/onep_luxury_appartment_1.jpg">
                 <div class="room_content">
                     <div class="room_title">Люкс с одноместным размещением</div>
-                    <a href="/apartment/onep_luxury" class="btn btn--white">Подробнее</a>
+                    <a class="btn btn--white" href="/apartment/onep_luxury">Подробнее</a>
                 </div>
             </div>
 
-            <a href="/book" class="btn btn--grey">Бронрование номера</a>
+            <a class="btn btn--grey" href="/book">Бронрование номера</a>
 
         </div>
     </div>
@@ -88,22 +89,22 @@
 
             <div class="footer_bock">
                 <div class="footer_title">Размещение</div>
-                <a href="/apartment/onep_luxury" class="footer_link">Люкс с одноместным размещением </a>
-                <a href="/apartment/luxury" class="footer_link">Люкс с двуместным размещением </a>
-                <a href="/apartment/deluxe" class="footer_link">Апартаменты делюкс </a>
+                <a class="footer_link" href="/apartment/onep_luxury">Люкс с одноместным размещением </a>
+                <a class="footer_link" href="/apartment/luxury">Люкс с двуместным размещением </a>
+                <a class="footer_link" href="/apartment/deluxe">Апартаменты делюкс </a>
             </div>
 
             <div class="footer_block">
                 <div class="footer_title">Предоставляемое пространство</div>
-                <a href="/entertainments/pool" class="footer_link">Бассейн </a>
-                <a href="/entertainments/banquet_hall" class="footer_link">Банкетный зал</a>
+                <a class="footer_link" href="/entertainments/pool">Бассейн </a>
+                <a class="footer_link" href="/entertainments/banquet_hall">Банкетный зал</a>
             </div>
 
             <div class="footer_block">
                 <div class="footer_title">Рестораны</div>
-                <a href="/entertainments/veranda" class="footer_link">Веранда</a>
-                <a href="/entertainments/bar" class="footer_link">Клубный бар</a>
-                <a href="/entertainments/restaurant" class="footer_link">TMI Restaurant</a>
+                <a class="footer_link" href="/entertainments/veranda">Веранда</a>
+                <a class="footer_link" href="/entertainments/bar">Клубный бар</a>
+                <a class="footer_link" href="/entertainments/restaurant">TMI Restaurant</a>
             </div>
 
             <div class="footer_block">

@@ -8,22 +8,22 @@ public class Landing {
 
     @RequestMapping("/main")
     public String getMainPage() {
-        return "index";
+        return "/landing/index";
     }
 
     @RequestMapping("/sign_in")
     public String getSingIn() {
-        return "sign_in";
+        return "/landing/sign_in";
     }
 
     @RequestMapping("/sign_up")
     public String getSingUp() {
-        return "sign_up";
+        return "/landing/sign_up";
     }
 
     @RequestMapping("/book")
     public String getBook() {
-        return "book";
+        return "/landing/book";
     }
 
 }

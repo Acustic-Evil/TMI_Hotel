@@ -28,14 +28,14 @@ public class Privileges {
     public String getGuestPage(Model model) {
         List<Guest> guests = guestService.getAllGuests();
         model.addAttribute("guests", guests);
-        return "guest_list";
+        return "/privileges/guest/guest_list";
     }
 
     @GetMapping("/staff_list")
     public String getStaffPage(Model model) {
         List<Employee> staff = employeeService.findAllEmployees();
         model.addAttribute("staff", staff);
-        return "staff_list";
+        return "/privileges/staff/staff_list";
     }
 
     @GetMapping("/bookings_list")
@@ -47,7 +47,7 @@ public class Privileges {
     public String findEmployee(@RequestParam String last_name, Model model){
         Employee employee = employeeService.findByLastName(last_name);
         model.addAttribute("employee", employee);
-        return "staff_list";
+        return "/privileges/staff/staff_list";
     }
 
 
@@ -55,7 +55,12 @@ public class Privileges {
     public String findGuest(@RequestParam String lastName, Model model){
         Guest guest = guestService.getGuest(lastName);
         model.addAttribute("guests", guest);
-        return "guest_list";
+        return "/privileges/guest/guest_list";
+    }
+
+    @GetMapping("/all_lists")
+    public String getAllLists() {
+        return "/privileges/all_lists";
     }
 
 

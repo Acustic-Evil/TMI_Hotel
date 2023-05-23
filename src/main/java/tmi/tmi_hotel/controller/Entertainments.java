@@ -8,26 +8,26 @@ public class Entertainments {
 
     @RequestMapping("/banquet_hall")
     public String getBanquet() {
-        return "banquet_hall";
+        return "/entertainments/banquet_hall";
     }
 
     @RequestMapping("/bar")
     public String getBar() {
-        return "bar";
+        return "/entertainments/bar";
     }
 
     @RequestMapping("/pool")
     public String getPool() {
-        return "pool";
+        return "/entertainments/pool";
     }
 
     @RequestMapping("/restaurant")
     public String getRestaurant() {
-        return "restaurant";
+        return "/entertainments/restaurant";
     }
 
     @RequestMapping("/veranda")
     public String getVeranda() {
-        return "veranda";
+        return "/entertainments/veranda";
     }
 }
