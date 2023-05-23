@@ -6,4 +6,8 @@ import tmi.tmi_hotel.entity.Room;
 
 @Repository
 public interface IRoomRepository extends JpaRepository<Room, Integer> {
+    Room getTopByRoomTypeAndOrdersIsNull(String room_type);
+
+    Room getRoomByIdRoom(Long id_room);
+
 }

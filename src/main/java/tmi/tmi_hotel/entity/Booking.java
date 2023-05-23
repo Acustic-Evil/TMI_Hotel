@@ -4,7 +4,8 @@ package tmi.tmi_hotel.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.sql.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -18,12 +19,18 @@ public class Booking {
     private @Id
     @GeneratedValue(strategy = GenerationType.AUTO) Long idBooking;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "idRoom")
     private Room idRoom;
 
 
-    private LocalDateTime checkInDate;
+    private LocalDate checkInDate;
 
-    private LocalDateTime checkOutDate;
+    private LocalDate checkOutDate;
+
+    public Booking(Room idRoom, LocalDate checkInDate, LocalDate checkOutDate) {
+        this.idRoom = idRoom;
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
+    }
 }

@@ -29,4 +29,11 @@ public class Zakaz { // TODO: rename (order)
     @JoinColumn(name = "idEmployee")
     private Employee employee;
 
+    public Zakaz(List<Room> rooms, Float totalPrice, Guest guest) {
+        this.rooms = rooms;
+        this.totalPrice = totalPrice;
+        this.guest = guest;
+    }
+
+
 }

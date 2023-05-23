@@ -48,8 +48,8 @@ public class Privileges {
 
     @PostMapping("/search_guest")
     public String findGuest(@RequestParam String lastName, Model model){
-        Guest guest = guestService.getGuest(lastName);
-        model.addAttribute("guests", guest);
+        List<Guest> guests = guestService.getGuestsByLastName(lastName);
+        model.addAttribute("guests", guests);
         return "/privileges/guest/guest_list";
     }
 

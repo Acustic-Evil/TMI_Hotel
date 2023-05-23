@@ -29,9 +29,14 @@ public class Guest {
 
     private String aboutComment;
 
-    private String role;
-
     private String password;
     private String matchingPassword;
 
+    public Guest(String lastName, String firstName, String middleName,String phoneNumber, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
 }

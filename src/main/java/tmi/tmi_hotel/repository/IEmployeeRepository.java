@@ -13,5 +13,7 @@ public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
 
     public Employee findEmployeeByLastName(String lastName);
 
+    public void deleteEmployeeByIdEmployee(long id);
+
 
 }

@@ -14,8 +14,8 @@ import java.util.List;
 @Table
 public class Room {
 
-    @OneToMany(mappedBy = "idRoom")
-    private List<Booking> bookings;
+    @OneToOne(mappedBy = "idRoom")
+    private Booking bookings;
 
     @ManyToOne
     @JoinColumn(name = "idOrder")
