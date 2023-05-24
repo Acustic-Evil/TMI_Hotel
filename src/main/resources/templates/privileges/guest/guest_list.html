@@ -51,7 +51,7 @@
                     Комментарий
                     <div class="data tooltip" th:text="${guest.getAboutComment()}"></div>
                 </div>
-                <button id="modal-btn" class="edit_btn"><a th:href="'/admin/guest_edit/' + ${guest.getIdGuest()}">Редактировать</a></button>
+                <button id="modal-btn" class="edit_btn"><a class="add_href" th:href="'/admin/guest_edit/' + ${guest.getIdGuest()}">Редактировать</a></button>
             </div>
         </div>
     </div>

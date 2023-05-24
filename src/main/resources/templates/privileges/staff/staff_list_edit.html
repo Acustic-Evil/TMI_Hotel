@@ -1,93 +1,109 @@
 <!DOCTYPE html>
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <link rel="icon" type="image/png>" href="/static/img/favicon.png">
-  <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/staff_list.css">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="/static/img/favicon.png" rel="icon" type="image/png>">
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap"
+          rel="stylesheet">
+    <link href="/static/css/staff_list.css" rel="stylesheet">
 </head>
 
 <body>
 <main>
-  <!-- Intro -->
-  <header class="intro ">
-    <div class="header">
-      <div class="container">
-        <div class="header_inner">
-          <nav class="nav">
-            <a href="/sign_in" class="nav_link">Войти</a>
-            <a href="/sign_up" class="nav_link">Регистрация</a>
-          </nav>
+    <!-- Intro -->
+    <header class="intro ">
+        <div class="header">
+            <div class="container">
+                <div class="header_inner">
+                    <nav class="nav">
+                        <a class="nav_link" href="/sign_in">Войти</a>
+                        <a class="nav_link" href="/sign_up">Регистрация</a>
+                    </nav>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+        <div class="container">
+            <div class="intro_inner">
+                <a class="intro_link" href="/main">Hotel TMI</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features -->
+
     <div class="container">
-      <div class="intro_inner">
-        <a href="/main" class="intro_link">Hotel TMI</a>
-      </div>
+
+        <div class="employees">
+            <div th:each="staff:${staff}">
+                <form action="/admin/staff_edit" method="post">
+                    <div class="data" hidden="hidden"><input hidden="hidden" name="idEmployee"
+                                                             th:value="${staff.getIdEmployee()}"></div>
+                    <div class="data"><input class="entity_input" name="lastName" required
+                                             th:value="${staff.getLastName}" type="text"></div>
+                    <div class="data"><input class="entity_input" name="firstName" required
+                                             th:value="${staff.getFirstName()}" type="text"></div>
+                    <div class="data"><input class="entity_input" name="middleName" required
+                                             th:value="${staff.getMiddleName()}" type="text"></div>
+                    <div class="data"><input class="entity_input" name="phoneNumber" required
+                                             th:value="${staff.getPhoneNumber()}" type="text"></div>
+                    <div class="data"><input class="entity_input" name="email" required
+                                             th:value="${staff.getEmail()}" type="text"></div>
+                    <div class="data"><input class="entity_input" name="jobTitle" required
+                                             th:value="${staff.getJobTitle()}" type="text"></div>
+                    <div class="data"><input class="entity_input" name="department" required
+                                             th:value="${staff.getDepartment()}" type="text"></div>
+                    <div class="data">
+                        <button class="add_btn" type="submit">Подтвердить редактирование</button>
+                    </div>
+                </form>
+                <form method="post" th:action="'/admin/delete_employee/' + ${staff.getIdEmployee()}">
+                    <div class="data">
+                        <button class="delete_btn" id="modal-btn" type="submit"><a class="edit_href">Удалить</a>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
     </div>
-  </header>
-
-  <!-- Features -->
-
-  <div class="container">
-
-    <div class="employees">
-      <div th:each="staff:${staff}">
-        <form action="/admin/staff_edit" method="post">
-          <div class="data" hidden="hidden"><input name="idEmployee" th:value="${staff.getIdEmployee()}" hidden="hidden"></div>
-          <div class="data"><input class="entity_input" type="text" th:value="${staff.getLastName}" name="lastName" required></div>
-          <div class="data"><input class="entity_input" type="text" th:value="${staff.getFirstName()}"  name="firstName" required></div>
-          <div class="data"><input class="entity_input" type="text" th:value="${staff.getMiddleName()}" name="middleName" required></div>
-          <div class="data"><input class="entity_input" type="text" th:value="${staff.getPhoneNumber()}" name="phoneNumber" required></div>
-          <div class="data"><input class="entity_input" type="text" th:value="${staff.getEmail()}" name="email" required></div>
-          <div class="data"><input class="entity_input" type="text" th:value="${staff.getJobTitle()}" name="jobTitle" required></div>
-          <div class="data"><input class="entity_input" type="text" th:value="${staff.getDepartment()}" name="department" required></div>
-          <div class="data"><button class="add_btn" type="submit">Подтвердить редактирование</button></div>
-          <div class="data"><button class="delete_btn" id="modal-btn"><a class="edit_href" th:href="'/admin/delete_employee/' + ${staff.getIdEmployee()}">Удалить</a></button></div>
-        </form>
-      </div>
-    </div>
-
-  </div>
 </main>
 
 <!-- Footer -->
 <footer class="footer">
-  <div class="container">
-    <div class="footer_inner">
+    <div class="container">
+        <div class="footer_inner">
 
-      <div class="footer_bock">
-        <div class="footer_title">Размещение</div>
-        <a href="/apartment/onep_luxury" class="footer_link">Люкс с одноместным размещением </a>
-        <a href="/apartment/luxury" class="footer_link">Люкс с двуместным размещением </a>
-        <a href="/apartment/deluxe" class="footer_link">Апартаменты делюкс </a>
-      </div>
+            <div class="footer_bock">
+                <div class="footer_title">Размещение</div>
+                <a class="footer_link" href="/apartment/onep_luxury">Люкс с одноместным размещением </a>
+                <a class="footer_link" href="/apartment/luxury">Люкс с двуместным размещением </a>
+                <a class="footer_link" href="/apartment/deluxe">Апартаменты делюкс </a>
+            </div>
 
-      <div class="footer_block">
-        <div class="footer_title">Предоставляемое пространство</div>
-        <a href="/entertainments/pool" class="footer_link">Бассейн </a>
-        <a href="/entertainments/banquet_hall" class="footer_link">Банкетный зал</a>
-      </div>
+            <div class="footer_block">
+                <div class="footer_title">Предоставляемое пространство</div>
+                <a class="footer_link" href="/entertainments/pool">Бассейн </a>
+                <a class="footer_link" href="/entertainments/banquet_hall">Банкетный зал</a>
+            </div>
 
-      <div class="footer_block">
-        <div class="footer_title">Рестораны</div>
-        <a href="/entertainments/veranda" class="footer_link">Веранда</a>
-        <a href="/entertainments/bar" class="footer_link">Клубный бар</a>
-        <a href="/entertainments/restaurant" class="footer_link">TMI Restaurant</a>
-      </div>
+            <div class="footer_block">
+                <div class="footer_title">Рестораны</div>
+                <a class="footer_link" href="/entertainments/veranda">Веранда</a>
+                <a class="footer_link" href="/entertainments/bar">Клубный бар</a>
+                <a class="footer_link" href="/entertainments/restaurant">TMI Restaurant</a>
+            </div>
 
-      <div class="footer_block">
-        <div class="footer_title">О гостинице</div>
-        <address>
-          <div>Улица подводная, дом 83</div>
-          <div>+79017295584</div>
-        </address>
-      </div>
+            <div class="footer_block">
+                <div class="footer_title">О гостинице</div>
+                <address>
+                    <div>Улица подводная, дом 83</div>
+                    <div>+79017295584</div>
+                </address>
+            </div>
 
+        </div>
     </div>
-  </div>
 </footer><!-- /footer -->
 
 </body>
