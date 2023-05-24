@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="icon" type="image/png>" href="/static/img/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/guest_list.css">
 </head>
 
@@ -52,7 +51,7 @@
                     Комментарий
                     <div class="data tooltip" th:text="${guest.getAboutComment()}"></div>
                 </div>
-                <button id="modal-btn" class="search form"><a th:href="'/admin/guest_edit/' + ${guest.getIdGuest()}">Редактировать</a></button>
+                <button id="modal-btn" class="edit_btn"><a th:href="'/admin/guest_edit/' + ${guest.getIdGuest()}">Редактировать</a></button>
             </div>
         </div>
     </div>

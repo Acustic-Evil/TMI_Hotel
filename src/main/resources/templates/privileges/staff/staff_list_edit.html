@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <link rel="icon" type="image/png>" href="/static/img/favicon.png">
-  <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap"
-        rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/guest_list.css">
+  <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/staff_list.css">
 </head>
 
 <body>
@@ -35,27 +34,24 @@
   <div class="container">
 
     <div class="employees">
-      <div class="data_flex" th:each="staff:${staff}">
+      <div th:each="staff:${staff}">
         <form action="/admin/staff_edit" method="post">
           <div class="data" hidden="hidden"><input name="idEmployee" th:value="${staff.getIdEmployee()}" hidden="hidden"></div>
-          <div class="data"><input type="text" th:value="${staff.getLastName}" name="lastName" required></div>
-          <div class="data"><input type="text" th:value="${staff.getFirstName()}"  name="firstName" required></div>
-          <div class="data"><input type="text" th:value="${staff.getMiddleName()}" name="middleName" required></div>
-          <div class="data"><input type="text" th:value="${staff.getPhoneNumber()}" name="phoneNumber" required></div>
-          <div class="data"><input type="text" th:value="${staff.getEmail()}" name="email" required></div>
-          <div class="data"><input type="text" th:value="${staff.getJobTitle()}" name="jobTitle" required></div>
-          <div class="data"><input type="text" th:value="${staff.getDepartment()}" name="department" required></div>
-          <div class="data"><button type="submit">Изменить</button></div>
+          <div class="data"><input class="entity_input" type="text" th:value="${staff.getLastName}" name="lastName" required></div>
+          <div class="data"><input class="entity_input" type="text" th:value="${staff.getFirstName()}"  name="firstName" required></div>
+          <div class="data"><input class="entity_input" type="text" th:value="${staff.getMiddleName()}" name="middleName" required></div>
+          <div class="data"><input class="entity_input" type="text" th:value="${staff.getPhoneNumber()}" name="phoneNumber" required></div>
+          <div class="data"><input class="entity_input" type="text" th:value="${staff.getEmail()}" name="email" required></div>
+          <div class="data"><input class="entity_input" type="text" th:value="${staff.getJobTitle()}" name="jobTitle" required></div>
+          <div class="data"><input class="entity_input" type="text" th:value="${staff.getDepartment()}" name="department" required></div>
+          <div class="data"><button class="add_btn" type="submit">Подтвердить редактирование</button></div>
+          <div class="data"><button class="delete_btn" id="modal-btn"><a class="edit_href" th:href="'/delete_employee/' + ${staf.getIdEmployee()}">Удалить</a></button></div>
         </form>
       </div>
     </div>
 
   </div>
 </main>
-
-
-<!-- Rooms -->
-
 
 <!-- Footer -->
 <footer class="footer">
@@ -93,17 +89,6 @@
     </div>
   </div>
 </footer><!-- /footer -->
-<form action="" id="modal-win" class="modal" method="post" th:each="guest:${guests}">
-  <div class="modal-window">
-    <div class="form_title">Коментарий</div>
-    <div class="close" id="modal-close">Х</div>
-    <div><textarea class="form_input"></textarea></div>
-    <div th:text="${guest.getAboutComment()}"></div>
-    <div><input type="submit" class="search" value="Ввод"></div>
-  </div>
-  <div class="modal over"></div>
-</form>
-
 
 <script>
   let popupToggle = document.querySelectorAll('.search.form')
