@@ -11,10 +11,9 @@ public interface IGuestRepository extends JpaRepository<Guest, Integer> {
 
     Guest getGuestByEmail(String email);
 
-    Guest getGuestByLastName(String lastName);
 
     List<Guest> getAllByLastName(String lastName);
 
-
+    Guest getGuestByIdGuest(Long id);
 
 }

@@ -3,6 +3,8 @@ package tmi.tmi_hotel.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,8 +16,8 @@ public class Guest {
     private @Id
     @GeneratedValue(strategy = GenerationType.AUTO) Long idGuest;
 
-    @OneToOne(mappedBy = "guest", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Zakaz zakaz;
+    @OneToMany(mappedBy = "guest", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Zakaz> zakaz;
 
     private String firstName;
 
@@ -28,6 +30,7 @@ public class Guest {
     private String phoneNumber;
 
     private String aboutComment;
+
 
     private String password;
     private String matchingPassword;

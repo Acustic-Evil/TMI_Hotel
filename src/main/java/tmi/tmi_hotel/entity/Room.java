@@ -18,7 +18,6 @@ public class Room {
     private Booking bookings;
 
     @ManyToOne
-    @JoinColumn(name = "idOrder")
     private Zakaz orders;
 
 

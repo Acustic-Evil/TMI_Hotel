@@ -21,12 +21,10 @@ public class Zakaz { // TODO: rename (order)
 
     private Float totalPrice;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idGuest")
+    @ManyToOne(fetch = FetchType.LAZY)
     private Guest guest;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idEmployee")
+    @ManyToOne(fetch = FetchType.LAZY)
     private Employee employee;
 
     public Zakaz(List<Room> rooms, Float totalPrice, Guest guest) {

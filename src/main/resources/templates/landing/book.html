@@ -25,7 +25,9 @@
     <div class="container">
         <div class="booking">
             <div class="book_title">Бронирование</div>
-            <div class="book_title" style="color: crimson" th:if="${param.smth_wrong}">Что-то полшло не так, попробуйте еще раз</div>
+            <div class="book_title" style="color: crimson" th:if="${param.smth_wrong}">Что-то полшло не так, попробуйте
+                еще раз
+            </div>
             <form action="/book" method="post">
                 <select class="input_book" name="rooms" required>
                     <option value="">Выбор комнаты</option>
@@ -42,19 +44,22 @@
                     <option value="2 взрослых 1 ребенок">2 взрослых 1 ребенок</option>
                     <option value="2 взрослых 2 ребенка">2 взрослых 2 ребенка</option>
                 </select>
+                <div class="footer_title" style="color: crimson" th:if="${param.FIO_err}">Введите полное имя через
+                    пробел
+                </div>
                 <input class="input_book" name="fio" placeholder="ФИО" required type="text">
-                <div class="input_book" style="color: crimson" th:if="${param.FIO_err}">Введите полное имя через пробел</div>
                 <input class="input_book" name="phone_number" placeholder="Номер телефона" required type="tel">
                 <input class="input_book" name="email" placeholder="Email" required type="email">
-                <input class="input_book" name="date_in" placeholder="Дата въезда" required th:min="${#temporals.format(currentDate, 'yyyy-MM-dd')}"
+                <input class="input_book" name="date_in" placeholder="Дата въезда" required
+                       th:min="${#temporals.format(currentDate, 'yyyy-MM-dd')}"
                        th:value="${#temporals.format(currentDate, 'yyyy-MM-dd')}"
                        type="date">
-                <input class="input_book" name="date_out" placeholder="Дата выезда" th:min="${#temporals.format(currentDate.plusDays(1), 'yyyy-MM-dd')}"
-                       th:value="${#temporals.format(currentDate.plusDays(1), 'yyyy-MM-dd')}" required type="date">
+                <input class="input_book" name="date_out" placeholder="Дата выезда"
+                       required
+                       th:min="${#temporals.format(currentDate.plusDays(1), 'yyyy-MM-dd')}" th:value="${#temporals.format(currentDate.plusDays(1), 'yyyy-MM-dd')}" type="date">
                 <button class="input_button" type="submit">Забронировать</button>
                 <div class="book_title" style="color: green" th:if="${param.success}">Успешно забронировано!</div>
             </form>
-
         </div>
     </div>
 </main>

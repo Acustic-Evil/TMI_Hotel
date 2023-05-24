@@ -20,7 +20,6 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.AUTO) Long idBooking;
 
     @OneToOne
-    @JoinColumn(name = "idRoom")
     private Room idRoom;
 
 

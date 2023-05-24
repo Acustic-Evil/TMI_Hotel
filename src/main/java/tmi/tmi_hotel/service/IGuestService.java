@@ -15,4 +15,8 @@ public interface IGuestService {
     Guest getGuestByEmail(String email);
 
     String addNewGuest(String fio, String phone_number, String email);
+
+    Guest getGuestById(Long id);
+
+    void updateGuest(Guest guest);
 }

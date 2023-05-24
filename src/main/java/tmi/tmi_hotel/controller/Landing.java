@@ -49,6 +49,7 @@ public class Landing {
                            @RequestParam("rooms") String room_type,
                            @RequestParam("date_in") String date_in,
                            @RequestParam("date_out") String date_out) {
+
         String check = guestService.addNewGuest(fio, phone_number, email);
 
         if (Objects.equals(check, "all good")) {

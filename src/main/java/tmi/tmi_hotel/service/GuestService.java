@@ -48,4 +48,22 @@ public class GuestService implements IGuestService {
         }
         return "all good";
     }
+
+    @Override
+    public Guest getGuestById(Long id) {
+        return guestRepository.getGuestByIdGuest(id);
+    }
+
+    @Override
+    public void updateGuest(Guest guest) {
+        Guest guest1 = getGuestById(guest.getIdGuest());
+        guest1.setEmail(guest.getEmail());
+        guest1.setFirstName(guest.getFirstName());
+        guest1.setLastName(guest.getLastName());
+        guest1.setMiddleName(guest.getMiddleName());
+        guest1.setPhoneNumber(guest.getPhoneNumber());
+        guest1.setAboutComment(guest.getAboutComment());
+
+        guestRepository.save(guest1);
+    }
 }
