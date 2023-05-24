@@ -2,9 +2,10 @@
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>TMI HOTEL</title>
     <link href="/static/img/favicon.png" rel="icon" type="image/png>">
-    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap"
+          rel="stylesheet">
     <link href="/static/css/guest_list.css" rel="stylesheet">
 </head>
 
@@ -37,18 +38,31 @@
 
             <form action="/admin/guest_edit" method="post">
                 <div th:each="guest:${guest}">
-                    <div class="data" hidden="hidden"><input name="idGuest" th:value="${guest.getIdGuest()}" hidden="hidden"></div>
-                    <div class="data"><input class="entity_input" name="lastName" th:value="${guest.getLastName()}" type="text"></div>
-                    <div class="data"><input class="entity_input" name="firstName" th:value="${guest.getFirstName()}" type="text"></div>
-                    <div class="data"><input class="entity_input" name="middleName" th:value="${guest.getMiddleName()}" type="text"></div>
-                    <div class="data"><input class="entity_input" name="phoneNumber" th:value="${guest.getPhoneNumber()}" type="text"></div>
-                    <div class="data"><input class="entity_input" name="email" th:value="${guest.getEmail()}" type="text"></div>
+                    <div class="data" hidden="hidden"><input hidden="hidden" name="idGuest"
+                                                             th:value="${guest.getIdGuest()}"></div>
+                    <div class="data"><input class="entity_input" name="lastName" th:value="${guest.getLastName()}"
+                                             type="text"></div>
+                    <div class="data"><input class="entity_input" name="firstName" th:value="${guest.getFirstName()}"
+                                             type="text"></div>
+                    <div class="data"><input class="entity_input" name="middleName" th:value="${guest.getMiddleName()}"
+                                             type="text"></div>
+                    <div class="data"><input class="entity_input" name="phoneNumber"
+                                             th:value="${guest.getPhoneNumber()}" type="text"></div>
+                    <div class="data"><input class="entity_input" name="email" th:value="${guest.getEmail()}"
+                                             type="text"></div>
                     <div class="modal-window">
                         <div class="form_title">Комментарий</div>
-                        <textarea class="form_input" name="aboutComment" th:text="${guest.getAboutComment()}"></textarea>
+                        <textarea class="form_input" name="aboutComment"
+                                  th:text="${guest.getAboutComment()}"></textarea>
                     </div>
-                    <div class="data"><button class="add_btn" type="submit">Подтвердить редактирование</button></div>
-                    <div class="data"><button class="delete_btn" id="modal-btn"><a class="edit_href" th:href="'/delete_guest/' + ${guest.getIdGuest()}">Удалить</a></button></div>
+                    <div class="data">
+                        <button class="add_btn" type="submit">Подтвердить редактирование</button>
+                    </div>
+                    <div class="data">
+                        <button class="delete_btn" id="modal-btn"><a class="edit_href"
+                                                                     th:href="'/delete_guest/' + ${guest.getIdGuest()}">Удалить</a>
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>

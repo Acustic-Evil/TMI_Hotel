@@ -2,45 +2,46 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Hotel TMI</title>
-    <link rel="icon" type="image/png>" href="/static/img/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/sign.css">
+    <title>TMI HOTEL</title>
+    <link href="/static/img/favicon.png" rel="icon" type="image/png>">
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap"
+          rel="stylesheet">
+    <link href="/css/sign.css" rel="stylesheet">
 </head>
 
 <body>
 <main>
-<!-- Intro -->
-<header class="intro">
-    <div class="header">
-        <div class="container">
-            <div class="header_inner">
-                <nav class="nav">
-                </nav>
+    <!-- Intro -->
+    <header class="intro">
+        <div class="header">
+            <div class="container">
+                <div class="header_inner">
+                    <nav class="nav">
+                    </nav>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="intro_inner">
-            <a href="/main" class="intro_link">Hotel TMI</a>
+        <div class="container">
+            <div class="intro_inner">
+                <a class="intro_link" href="/main">Hotel TMI</a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <form method="post" th:action="@{/login}">
+            <input name="username" placeholder="Почта" type="email">
+            <input name="password" placeholder="Пароль" type="password">
+        </form>
+        <button>Войти</button>
+        <div class="member">
+            Не зарегистрировны? <a href="/sign_up">
+            Регистрация
+        </a>
         </div>
     </div>
-</header>
-
-
-<!-- Wrapper -->
-<div class="wrapper">
-    <form th:action="@{/login}" method="post">
-        <input type="email" placeholder="Почта" name="username">
-        <input type="password" placeholder="Пароль" name="password">
-    </form>
-    <button>Войти</button>
-    <div class="member">
-        Не зарегистрировны? <a href="/sign_up">
-        Регистрация
-    </a>
-    </div>
-</div>
 
 </main>
 
@@ -51,22 +52,22 @@
 
             <div class="footer_bock">
                 <div class="footer_title">Размещение</div>
-                <a href="/apartment/onep_luxury" class="footer_link">Люкс с одноместным размещением </a>
-                <a href="/apartment/luxury" class="footer_link">Люкс с двуместным размещением </a>
-                <a href="/apartment/deluxe" class="footer_link">Апартаменты делюкс </a>
+                <a class="footer_link" href="/apartment/onep_luxury">Люкс с одноместным размещением </a>
+                <a class="footer_link" href="/apartment/luxury">Люкс с двуместным размещением </a>
+                <a class="footer_link" href="/apartment/deluxe">Апартаменты делюкс </a>
             </div>
 
             <div class="footer_block">
                 <div class="footer_title">Предоставляемое пространство</div>
-                <a href="/entertainments/pool" class="footer_link">Бассейн </a>
-                <a href="/entertainments/banquet_hall" class="footer_link">Банкетный зал</a>
+                <a class="footer_link" href="/entertainments/pool">Бассейн </a>
+                <a class="footer_link" href="/entertainments/banquet_hall">Банкетный зал</a>
             </div>
 
             <div class="footer_block">
                 <div class="footer_title">Рестораны</div>
-                <a href="/entertainments/veranda" class="footer_link">Веранда</a>
-                <a href="/entertainments/bar" class="footer_link">Клубный бар</a>
-                <a href="/entertainments/restaurant" class="footer_link">TMI Restaurant</a>
+                <a class="footer_link" href="/entertainments/veranda">Веранда</a>
+                <a class="footer_link" href="/entertainments/bar">Клубный бар</a>
+                <a class="footer_link" href="/entertainments/restaurant">TMI Restaurant</a>
             </div>
 
             <div class="footer_block">

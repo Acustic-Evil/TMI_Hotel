@@ -2,10 +2,11 @@
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="icon" type="image/png>" href="/static/img/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/guest_list.css">
+    <title>TMI HOTEL</title>
+    <link href="/static/img/favicon.png" rel="icon" type="image/png>">
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap"
+          rel="stylesheet">
+    <link href="/static/css/guest_list.css" rel="stylesheet">
 </head>
 
 <body>
@@ -16,15 +17,15 @@
             <div class="container">
                 <div class="header_inner">
                     <nav class="nav">
-                        <a href="/sign_in" class="nav_link">Войти</a>
-                        <a href="/sign_up" class="nav_link">Регистрация</a>
+                        <a class="nav_link" href="/sign_in">Войти</a>
+                        <a class="nav_link" href="/sign_up">Регистрация</a>
                     </nav>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="intro_inner">
-                <a href="/main" class="intro_link">Hotel TMI</a>
+                <a class="intro_link" href="/main">Hotel TMI</a>
             </div>
         </div>
     </header>
@@ -35,15 +36,17 @@
 
         <div class="guests">
             <div th:each="guest:${guests}">
-                <form th:action="@{/add}" method="post">
-                    <div class="data"><input class="entity_input" type="text" name="Фамилия" required></div>
-                    <div class="data"><input class="entity_input" type="text" name="Имя" required></div>
-                    <div class="data"><input class="entity_input" type="text" name="Отчество" required></div>
-                    <div class="data"><input class="entity_input" type="text" name="Номер телефона" required></div>
-                    <div class="data"><input class="entity_input" type="text" name="Почта" required></div>
-                    <div class="data"><input class="entity_input" type="text" name="Должность" required></div>
-                    <div class="data"><input class="entity_input" type="text" name="Департамент" required></div>
-                    <div class="data"><button class="add_btn" type="submit">Добавить</button></div>
+                <form method="post" th:action="@{/add}">
+                    <div class="data"><input class="entity_input" name="Фамилия" required type="text"></div>
+                    <div class="data"><input class="entity_input" name="Имя" required type="text"></div>
+                    <div class="data"><input class="entity_input" name="Отчество" required type="text"></div>
+                    <div class="data"><input class="entity_input" name="Номер телефона" required type="text"></div>
+                    <div class="data"><input class="entity_input" name="Почта" required type="text"></div>
+                    <div class="data"><input class="entity_input" name="Должность" required type="text"></div>
+                    <div class="data"><input class="entity_input" name="Департамент" required type="text"></div>
+                    <div class="data">
+                        <button class="add_btn" type="submit">Добавить</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -61,22 +64,22 @@
 
             <div class="footer_bock">
                 <div class="footer_title">Размещение</div>
-                <a href="/apartment/onep_luxury" class="footer_link">Люкс с одноместным размещением </a>
-                <a href="/apartment/luxury" class="footer_link">Люкс с двуместным размещением </a>
-                <a href="/apartment/deluxe" class="footer_link">Апартаменты делюкс </a>
+                <a class="footer_link" href="/apartment/onep_luxury">Люкс с одноместным размещением </a>
+                <a class="footer_link" href="/apartment/luxury">Люкс с двуместным размещением </a>
+                <a class="footer_link" href="/apartment/deluxe">Апартаменты делюкс </a>
             </div>
 
             <div class="footer_block">
                 <div class="footer_title">Предоставляемое пространство</div>
-                <a href="/entertainments/pool" class="footer_link">Бассейн </a>
-                <a href="/entertainments/banquet_hall" class="footer_link">Банкетный зал</a>
+                <a class="footer_link" href="/entertainments/pool">Бассейн </a>
+                <a class="footer_link" href="/entertainments/banquet_hall">Банкетный зал</a>
             </div>
 
             <div class="footer_block">
                 <div class="footer_title">Рестораны</div>
-                <a href="/entertainments/veranda" class="footer_link">Веранда</a>
-                <a href="/entertainments/bar" class="footer_link">Клубный бар</a>
-                <a href="/entertainments/restaurant" class="footer_link">TMI Restaurant</a>
+                <a class="footer_link" href="/entertainments/veranda">Веранда</a>
+                <a class="footer_link" href="/entertainments/bar">Клубный бар</a>
+                <a class="footer_link" href="/entertainments/restaurant">TMI Restaurant</a>
             </div>
 
             <div class="footer_block">
@@ -90,13 +93,13 @@
         </div>
     </div>
 </footer><!-- /footer -->
-<form action="" id="modal-win" class="modal" method="post" th:each="guest:${guests}">
+<form action="" class="modal" id="modal-win" method="post" th:each="guest:${guests}">
     <div class="modal-window">
         <div class="form_title">Коментарий</div>
         <div class="close" id="modal-close">Х</div>
         <div><textarea class="form_input"></textarea></div>
         <div th:text="${guest.getAboutComment()}"></div>
-        <div><input type="submit" class="search" value="Ввод"></div>
+        <div><input class="search" type="submit" value="Ввод"></div>
     </div>
     <div class="modal over"></div>
 </form>
