@@ -67,4 +67,15 @@ public class OrderService implements IOrderService {
         System.out.println("Order is good");
         return true;
     }
+
+    @Override
+    public void cancelBooking(Long id) {
+        Booking booking = bookingRepository.findBookingByIdBooking(id);
+        Room room = booking.getIdRoom();
+        room.setBookings(null);
+        room.setOrders(null);
+        //Room room = roomRepository.getRoomByIdRoom(booking.getIdRoom().getIdRoom());
+        bookingRepository.deleteBookingByIdBooking(id);
+        roomRepository.save(room);
+    }
 }

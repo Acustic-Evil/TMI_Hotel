@@ -8,10 +8,7 @@ import tmi.tmi_hotel.entity.Booking;
 import tmi.tmi_hotel.entity.Employee;
 import tmi.tmi_hotel.entity.Guest;
 import tmi.tmi_hotel.entity.Room;
-import tmi.tmi_hotel.service.BookingService;
-import tmi.tmi_hotel.service.EmployeeService;
-import tmi.tmi_hotel.service.GuestService;
-import tmi.tmi_hotel.service.RoomService;
+import tmi.tmi_hotel.service.*;
 
 import java.util.List;
 
@@ -33,6 +30,16 @@ public class Privileges {
     @Autowired
     RoomService roomService;
 
+    @Autowired
+    OrderService orderService;
+
+    @GetMapping("/all_lists")
+    public String getAllLists() {
+        return "/privileges/all_lists";
+    }
+
+
+    // ------------GUEST------------
     @GetMapping("/guest_list")
     public String getGuestPage(Model model) {
         List<Guest> guests = guestService.getAllGuests();
@@ -53,6 +60,14 @@ public class Privileges {
         return "redirect:/admin/guest_list";
     }
 
+    @PostMapping("/search_guest")
+    public String findGuest(@RequestParam String lastName, Model model){
+        List<Guest> guests = guestService.getGuestsByLastName(lastName);
+        model.addAttribute("guests", guests);
+        return "/privileges/guest/guest_list";
+    }
+
+    // ------------EMPLOYEE/STAFF------------
     @GetMapping("/staff_list")
     public String getStaffPage(Model model) {
         List<Employee> staff = employeeService.findAllEmployees();
@@ -92,24 +107,25 @@ public class Privileges {
         return "/privileges/staff/staff_list";
     }
 
-
-    @PostMapping("/search_guest")
-    public String findGuest(@RequestParam String lastName, Model model){
-        List<Guest> guests = guestService.getGuestsByLastName(lastName);
-        model.addAttribute("guests", guests);
-        return "/privileges/guest/guest_list";
+    @PostMapping("/delete_employee/{id}")
+    public String deleteEmployee(@PathVariable String id) {
+        employeeService.deleteEmployee(parseLong(id));
+        return "redirect:/admin/staff_list";
     }
 
-    @GetMapping("/all_lists")
-    public String getAllLists() {
-        return "/privileges/all_lists";
-    }
-
+    // ------------BOOKING------------
     @GetMapping("/booking_list")
     public String getBookingPage(Model model) {
         List<Booking> bookings = bookingService.findAllBookings();
         model.addAttribute("bookings", bookings);
         return "/privileges/booking/booking_list";
     }
+
+    @PostMapping("/cancel_booking/{id}")
+    public String cancelBooking(@PathVariable String id) {
+        orderService.cancelBooking(parseLong(id));
+        return "redirect:/admin/booking_list";
+    }
+
 
 }

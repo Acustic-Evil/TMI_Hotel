@@ -41,4 +41,9 @@ public class EmployeeService implements IEmployeeService {
         employee1.setDepartment(employee.getDepartment());
         employeeRepository.save(employee1);
     }
+
+    @Override
+    public void deleteEmployee(Long id){
+        employeeRepository.deleteEmployeeByIdEmployee(id);
+    }
 }
