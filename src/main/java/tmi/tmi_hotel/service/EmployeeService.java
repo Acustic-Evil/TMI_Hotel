@@ -16,29 +16,29 @@ public class EmployeeService implements IEmployeeService {
     public List<Employee> findAllEmployees() {
         return employeeRepository.findAll();
     }
-
     @Override
-    public void deleteById(Long id) {
-
+    public void addNewEmployee(Employee employee) {
+        employeeRepository.save(employee);
     }
-
-    @Override
-    public Employee updateEmployee(Employee employee) {
-        return null;
-    }
-
-    @Override
-    public Employee addNewEmployee(Employee employee) {
-        return null;
-    }
-
-    @Override
-    public Employee findByEmail(String email) {
-        return employeeRepository.findEmployeeByEmail(email);
-    }
-
     @Override
     public Employee findByLastName(String lastName) {
-        return employeeRepository.findEmployeeByLastName(lastName);
+        return employeeRepository.getEmployeeByLastName(lastName);
+    }
+
+    @Override
+    public Employee getEmployeeById(Long id) {
+        return employeeRepository.getEmployeeByIdEmployee(id);
+    }
+    @Override
+    public void updateEmployee(Employee employee) {
+        Employee employee1 = getEmployeeById(employee.getIdEmployee());
+        employee1.setEmail(employee.getEmail());
+        employee1.setFirstName(employee.getFirstName());
+        employee1.setLastName(employee.getLastName());
+        employee1.setMiddleName(employee.getMiddleName());
+        employee1.setPhoneNumber(employee.getPhoneNumber());
+        employee1.setJobTitle(employee.getJobTitle());
+        employee1.setDepartment(employee.getDepartment());
+        employeeRepository.save(employee1);
     }
 }

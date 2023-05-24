@@ -43,10 +43,13 @@
     <div class="bookings">
       <div class="lists">Список броней</div>
       <div class="data_flex" th:each="booking:${bookings}">
-        <div class="data" th:text="${booking.getIdRoom()}"></div>
+        <div class="data" th:text="${booking.idRoom.getIdRoom()}"></div>
+        <div class="data" th:text="${booking.idRoom.getRoomNumber()}"></div>
+        <div class="data" th:text="${booking.idRoom.getRoomType()}"></div>
         <div class="data" th:text="${booking.getCheckInDate()}"></div>
         <div class="data" th:text="${booking.getCheckOutDate()}"></div>
-        <div class="data" th:text="${guest.getPhoneNumber()}"></div>
+        <div class="data" th:text="${booking.idRoom.orders.getTotalPrice()}"></div>
+
       </div>
     </div>
 

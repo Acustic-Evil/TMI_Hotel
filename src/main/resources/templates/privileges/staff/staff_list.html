@@ -33,13 +33,13 @@
     <!-- Features -->
 
     <div class="container">
-        <form method="post" action="/admin/search">
+        <form method="post" action="/admin/search_employee">
             <div class="input_search">
-                <input class="input_lists" type="text" name="email" placeholder="Фамилия сотрудника">
+                <input class="input_lists" type="text" name="last_name" placeholder="Фамилия">
                 <button class="search" type="submit">Поиск</button>
             </div>
         </form>
-
+        <button><a href="/admin/staff_add">Добавить сотрудника</a></button>
 
         <div class="employees">
             <div class="lists">Список сотрудников</div>
@@ -50,7 +50,8 @@
                 <div class="data" th:text="${staf.getPhoneNumber()}"></div>
                 <div class="data" th:text="${staf.getEmail()}"></div>
                 <div class="data" th:text="${staf.getJobTitle()}"></div>
-                <div class="data" th:text="${staf.getDepartment()}">x</div>
+                <div class="data" th:text="${staf.getDepartment()}"></div>
+                <button id="modal-btn" class="search form"><a th:href="'/admin/staff_edit/' + ${staf.getIdEmployee()}">Редактировать</a></button>
             </div>
 
         </div>
@@ -97,39 +98,6 @@
         </div>
     </div>
 </footer><!-- /footer -->
-<form action="" id="modal-win" class="modal" method="post" th:each="guest:${guests}">
-    <div class="modal-window">
-        <div class="form_title">Коментарий</div>
-        <div class="close" id="modal-close">Х</div>
-        <div><textarea class="form_input"></textarea></div>
-        <div th:text="${guest.getAboutComment()}"></div>
-        <div><input type="submit" class="search" value="Ввод"></div>
-    </div>
-    <div class="modal over"></div>
-</form>
-
-
-<script>
-    let popupToggle = document.querySelectorAll('.search.form')
-    popup = document.getElementById('modal-win')
-    popupClose = document.getElementsByClassName('close')
-
-    popupToggle.forEach(function (btn) {
-        btn.onclick = function () {
-            popup.style.display = 'flex';
-        }
-    })
-
-    popupClose.onclick = function () {
-        popup.style.display = 'none';
-    }
-
-    window.onclick = function (e) {
-        if (e.target === popup) {
-            popup.style.display = 'none';
-        }
-    }
-</script>
 
 
 </body>

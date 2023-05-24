@@ -35,15 +35,15 @@
   <div class="container">
 
     <div class="employees">
-      <div class="data_flex" th:each="staf:${staff}">
-        <form th:action="@{/add}" method="post">
-          <div class="data"><input type="text" name="Фамилия" required></div>
-          <div class="data"><input type="text" name="Имя" required></div>
-          <div class="data"><input type="text" name="Отчество" required></div>
-          <div class="data"><input type="text" name="Номер телефона" required></div>
-          <div class="data"><input type="text" name="Почта" required></div>
-          <div class="data"><input type="text" name="Должность" required></div>
-          <div class="data"><input type="text" name="Департамент" required></div>
+      <div class="data_flex">
+        <form action="/admin/staff_add" method="post">
+          <div class="data"><input type="text" placeholder="Фамилия" name="lastName" required></div>
+          <div class="data"><input type="text" placeholder="Имя" name="firstName" required></div>
+          <div class="data"><input type="text" placeholder="Отчество" name="middleName" required></div>
+          <div class="data"><input type="text" placeholder="Номер телефона" name="phoneNumber" required></div>
+          <div class="data"><input type="text" placeholder="Почта" name="email" required></div>
+          <div class="data"><input type="text" placeholder="Должность" name="jobTitle" required></div>
+          <div class="data"><input type="text" placeholder="Департамент" name="department" required></div>
           <div class="data"><button type="submit">Добавить</button></div>
         </form>
       </div>

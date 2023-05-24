@@ -4,6 +4,7 @@ package tmi.tmi_hotel.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
 
 
 @Getter
@@ -18,8 +19,8 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.AUTO) Long idEmployee;
 
 
-    @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Zakaz zakaz;
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Zakaz> zakaz;
 
     private String firstName;
 

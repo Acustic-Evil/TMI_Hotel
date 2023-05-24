@@ -35,16 +35,17 @@
   <div class="container">
 
     <div class="employees">
-      <div class="data_flex" th:each="staf:${staff}">
-        <form th:action=" '/edit/' + ${staf.getId}" method="post">
-            <div class="data"><input th:value="${staf.getLastName()}" type="text" name="Фамилия"></div>
-            <div class="data"><input th:value="${staf.getFirstName()}" type="text" name="Имя"></div>
-            <div class="data"><input th:value="${staf.getMiddleName()}" type="text" name="Отчество"></div>
-            <div class="data"><input th:value="${staf.getPhoneNumber()}" type="text" name="Номер телефона"></div>
-            <div class="data"><input th:value="${staf.getEmail()}" type="text" name="Почта"></div>
-            <div class="data"><input th:value="${staf.getJobTitle()}" type="text" name="Должность"></div>
-            <div class="data"><input th:value="${staf.getDepartment()}" type="text" name="Департамент"></div>
-            <div class="data"><button type="submit">Изменить</button></div>
+      <div class="data_flex" th:each="staff:${staff}">
+        <form action="/admin/staff_edit" method="post">
+          <div class="data" hidden="hidden"><input name="idEmployee" th:value="${staff.getIdEmployee()}" hidden="hidden"></div>
+          <div class="data"><input type="text" th:value="${staff.getLastName}" name="lastName" required></div>
+          <div class="data"><input type="text" th:value="${staff.getFirstName()}"  name="firstName" required></div>
+          <div class="data"><input type="text" th:value="${staff.getMiddleName()}" name="middleName" required></div>
+          <div class="data"><input type="text" th:value="${staff.getPhoneNumber()}" name="phoneNumber" required></div>
+          <div class="data"><input type="text" th:value="${staff.getEmail()}" name="email" required></div>
+          <div class="data"><input type="text" th:value="${staff.getJobTitle()}" name="jobTitle" required></div>
+          <div class="data"><input type="text" th:value="${staff.getDepartment()}" name="department" required></div>
+          <div class="data"><button type="submit">Изменить</button></div>
         </form>
       </div>
     </div>

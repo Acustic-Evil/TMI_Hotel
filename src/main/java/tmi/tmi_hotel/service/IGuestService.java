@@ -10,5 +10,13 @@ public interface IGuestService {
 
     List<Guest> getAllGuests();
 
-    Guest getGuest(String email);
+    List<Guest> getGuestsByLastName(String email);
+
+    Guest getGuestByEmail(String email);
+
+    String addNewGuest(String fio, String phone_number, String email);
+
+    Guest getGuestById(Long id);
+
+    void updateGuest(Guest guest);
 }

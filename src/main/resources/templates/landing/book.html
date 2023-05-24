@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="icon" type="image/png>" href="/static/img/favicon.png">
+    <link href="/static/img/favicon.png" rel="icon" type="image/png>">
     <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/book.css">
+    <link href="/static/css/book.css" rel="stylesheet">
 </head>
 
 <body>
@@ -15,41 +15,51 @@
     <header class="intro ">
         <div class="container">
             <div class="intro_inner">
-                <a href="/main" class="intro_link">Hotel TMI</a>
+                <a class="intro_link" href="/main">Hotel TMI</a>
             </div>
         </div>
     </header>
 
     <!-- Features -->
 
-    <div class="container" >
+    <div class="container">
         <div class="booking">
             <div class="book_title">Бронирование</div>
-            <form>
-                <select name="rooms" class="input_book" >
+            <div class="book_title" style="color: crimson" th:if="${param.smth_wrong}">Что-то полшло не так, попробуйте
+                еще раз
+            </div>
+            <form action="/book" method="post">
+                <select class="input_book" name="rooms" required>
                     <option value="">Выбор комнаты</option>
-                    <option value="Люкс с одноместным размещением" name="1">Люкс с одноместным размещением</option>
-                    <option value="Люкс с двуместным размешением" name="2">Люкс с двуместным размещением</option>
-                    <option value="Апартаменты ДеЛюкс" name="3">Апартаменты ДеЛюкс</option>
+                    <option name="1" value="Люкс с одноместным размещением">Люкс с одноместным размещением</option>
+                    <option name="2" value="Люкс с двуместным размещением">Люкс с двуместным размещением</option>
+                    <option name="3" value="Апартаменты ДеЛюкс">Апартаменты ДеЛюкс</option>
                 </select>
-                <select name="guests" class="input_book">
+                <select class="input_book" name="guests" required>
                     <option value="">Выбор количества гостей</option>
                     <option value="1 взрослый">1 взрослый</option>
                     <option value="1 взрослый 1 ребенок">1 взрослый 1 ребенок</option>
                     <option value="1 взрослый 2 ребенка">1 взрослый 2 ребенка</option>
                     <option value="2 взрослых">2 взрослых</option>
                     <option value="2 взрослых 1 ребенок">2 взрослых 1 ребенок</option>
-                    <option value="2 взрослых 2 ребенка" >2 взрослых 2 ребенка</option>
+                    <option value="2 взрослых 2 ребенка">2 взрослых 2 ребенка</option>
                 </select>
-                <input class="input_book" type="text" placeholder="ФИО" name="username">
-                <input class="input_book" type="tel" placeholder="Номер телефона" name="phone">
-                <input class="input_book" type="email" placeholder="Email" name="email">
-                <input class="input_book" type="date" placeholder="Дата въезда" name="date in">
-                <input class="input_book" type="date" placeholder="Дата выезда" name="date out">
-
-
+                <div class="footer_title" style="color: crimson" th:if="${param.FIO_err}">Введите полное имя через
+                    пробел
+                </div>
+                <input class="input_book" name="fio" placeholder="ФИО" required type="text">
+                <input class="input_book" name="phone_number" placeholder="Номер телефона" required type="tel">
+                <input class="input_book" name="email" placeholder="Email" required type="email">
+                <input class="input_book" name="date_in" placeholder="Дата въезда" required
+                       th:min="${#temporals.format(currentDate, 'yyyy-MM-dd')}"
+                       th:value="${#temporals.format(currentDate, 'yyyy-MM-dd')}"
+                       type="date">
+                <input class="input_book" name="date_out" placeholder="Дата выезда"
+                       required
+                       th:min="${#temporals.format(currentDate.plusDays(1), 'yyyy-MM-dd')}" th:value="${#temporals.format(currentDate.plusDays(1), 'yyyy-MM-dd')}" type="date">
+                <button class="input_button" type="submit">Забронировать</button>
+                <div class="book_title" style="color: green" th:if="${param.success}">Успешно забронировано!</div>
             </form>
-            <button class="input_button">Забронировать</button>
         </div>
     </div>
 </main>
@@ -65,22 +75,22 @@
 
             <div class="footer_bock">
                 <div class="footer_title">Размещение</div>
-                <a href="/apartment/onep_luxury" class="footer_link">Люкс с одноместным размещением </a>
-                <a href="/apartment/luxury" class="footer_link">Люкс с двуместным размещением </a>
-                <a href="/apartment/deluxe" class="footer_link">Апартаменты делюкс </a>
+                <a class="footer_link" href="/apartment/onep_luxury">Люкс с одноместным размещением </a>
+                <a class="footer_link" href="/apartment/luxury">Люкс с двуместным размещением </a>
+                <a class="footer_link" href="/apartment/deluxe">Апартаменты делюкс </a>
             </div>
 
             <div class="footer_block">
                 <div class="footer_title">Предоставляемое пространство</div>
-                <a href="/entertainments/pool" class="footer_link">Бассейн </a>
-                <a href="/entertainments/banquet_hall" class="footer_link">Банкетный зал</a>
+                <a class="footer_link" href="/entertainments/pool">Бассейн </a>
+                <a class="footer_link" href="/entertainments/banquet_hall">Банкетный зал</a>
             </div>
 
             <div class="footer_block">
                 <div class="footer_title">Рестораны</div>
-                <a href="/entertainments/veranda" class="footer_link">Веранда</a>
-                <a href="/entertainments/bar" class="footer_link">Клубный бар</a>
-                <a href="/entertainments/restaurant" class="footer_link">TMI Restaurant</a>
+                <a class="footer_link" href="/entertainments/veranda">Веранда</a>
+                <a class="footer_link" href="/entertainments/bar">Клубный бар</a>
+                <a class="footer_link" href="/entertainments/restaurant">TMI Restaurant</a>
             </div>
 
             <div class="footer_block">
