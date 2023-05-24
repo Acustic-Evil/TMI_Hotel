@@ -45,7 +45,7 @@
           <div class="data"><input class="entity_input" type="text" th:value="${staff.getJobTitle()}" name="jobTitle" required></div>
           <div class="data"><input class="entity_input" type="text" th:value="${staff.getDepartment()}" name="department" required></div>
           <div class="data"><button class="add_btn" type="submit">Подтвердить редактирование</button></div>
-          <div class="data"><button class="delete_btn" id="modal-btn"><a class="edit_href" th:href="'/delete_employee/' + ${staf.getIdEmployee()}">Удалить</a></button></div>
+          <div class="data"><button class="delete_btn" id="modal-btn"><a class="edit_href" th:href="'/admin/delete_employee/' + ${staff.getIdEmployee()}">Удалить</a></button></div>
         </form>
       </div>
     </div>
@@ -89,29 +89,6 @@
     </div>
   </div>
 </footer><!-- /footer -->
-
-<script>
-  let popupToggle = document.querySelectorAll('.search.form')
-  popup = document.getElementById('modal-win')
-  popupClose = document.getElementsByClassName('close')
-
-  popupToggle.forEach(function (btn) {
-    btn.onclick = function () {
-      popup.style.display = 'flex';
-    }
-  })
-
-  popupClose.onclick = function () {
-    popup.style.display = 'none';
-  }
-
-  window.onclick = function (e) {
-    if (e.target === popup) {
-      popup.style.display = 'none';
-    }
-  }
-</script>
-
 
 </body>
 </html>

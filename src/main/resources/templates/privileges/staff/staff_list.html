@@ -49,7 +49,7 @@
                 <div class="data" th:text="${staf.getEmail()}"></div>
                 <div class="data" th:text="${staf.getJobTitle()}"></div>
                 <div class="data" th:text="${staf.getDepartment()}"></div>
-                <button class="edit_btn" id="modal-btn""><a class="edit_href" th:href="'/admin/staff_edit/' + ${staf.getIdEmployee()}">Редактировать</a></button>
+                <button class="edit_btn" id="modal-btn"><a class="edit_href" th:href="'/admin/staff_edit/' + ${staf.getIdEmployee()}">Редактировать</a></button>
             </div>
         </div>
     </div>

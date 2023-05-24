@@ -74,8 +74,7 @@ public class OrderService implements IOrderService {
         Room room = booking.getIdRoom();
         room.setBookings(null);
         room.setOrders(null);
-        //Room room = roomRepository.getRoomByIdRoom(booking.getIdRoom().getIdRoom());
-        bookingRepository.deleteBookingByIdBooking(id);
+        bookingRepository.delete(booking);
         roomRepository.save(room);
     }
 }
