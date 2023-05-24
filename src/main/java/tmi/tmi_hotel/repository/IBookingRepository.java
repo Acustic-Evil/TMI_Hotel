@@ -8,5 +8,7 @@ import java.util.List;
 
 @Repository
 public interface IBookingRepository extends JpaRepository<Booking, Integer> {
+    void deleteBookingByIdBooking(Long id);
 
+    Booking findBookingByIdBooking(Long id);
 }

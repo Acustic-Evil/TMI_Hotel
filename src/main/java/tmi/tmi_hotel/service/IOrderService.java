@@ -6,4 +6,6 @@ import org.springframework.stereotype.Service;
 public interface IOrderService {
 
     boolean order(String room_type, String date_in, String date_out, String email);
+
+    void cancelBooking(Long id);
 }
