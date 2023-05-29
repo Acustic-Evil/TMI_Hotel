@@ -19,4 +19,6 @@ public interface IGuestService {
     Guest getGuestById(Long id);
 
     void updateGuest(Guest guest);
+
+    void deleteGuest(Long id);
 }

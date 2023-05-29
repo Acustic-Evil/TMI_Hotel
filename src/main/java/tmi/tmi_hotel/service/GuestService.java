@@ -63,7 +63,13 @@ public class GuestService implements IGuestService {
         guest1.setMiddleName(guest.getMiddleName());
         guest1.setPhoneNumber(guest.getPhoneNumber());
         guest1.setAboutComment(guest.getAboutComment());
-
         guestRepository.save(guest1);
+    }
+
+    @Override
+    public void deleteGuest(Long id) {
+        Guest guest = getGuestById(id);
+        guestRepository.delete(guest);
+        System.out.println("Guest deleted");
     }
 }

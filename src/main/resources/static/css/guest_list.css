@@ -221,7 +221,7 @@ main{
 }
 
 .hoverable:hover .tooltip {
-    word-break: break-all;
+    word-break: break-word;
     display: block;
     opacity: 1;
 }
@@ -383,7 +383,7 @@ address {
     border-radius: 5px;
     outline: 1px white;
     padding: 10px 0;
-    font-size: 10px;
+    font-size: 20px;
     margin: 10px 0 10px;
 }
 

@@ -58,11 +58,12 @@
                     <div class="data">
                         <button class="add_btn" type="submit">Подтвердить редактирование</button>
                     </div>
-                    <div class="data">
-                        <button class="delete_btn" id="modal-btn"><a class="edit_href"
-                                                                     th:href="'/delete_guest/' + ${guest.getIdGuest()}">Удалить</a>
-                        </button>
-                    </div>
+                </div>
+            </form>
+            <form method="post" th:action="'/admin/delete_guest/' + ${guest.getIdGuest()}">
+                <div class="data">
+                    <button class="delete_btn" id="modal-btn" type="submit"><a class="edit_href">Удалить</a>
+                    </button>
                 </div>
             </form>
         </div>

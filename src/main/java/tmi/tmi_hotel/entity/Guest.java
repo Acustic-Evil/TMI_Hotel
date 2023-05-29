@@ -33,7 +33,7 @@ public class Guest {
 
 
     private String password;
-    private String matchingPassword;
+
 
     public Guest(String lastName, String firstName, String middleName,String phoneNumber, String email) {
         this.firstName = firstName;

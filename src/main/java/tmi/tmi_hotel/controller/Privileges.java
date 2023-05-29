@@ -67,6 +67,12 @@ public class Privileges {
         return "/privileges/guest/guest_list";
     }
 
+    @PostMapping("/delete_guest/{id}")
+    public String deleteGuest(@PathVariable String id) {
+        guestService.deleteGuest(parseLong(id));
+        return "redirect:/admin/guest_list";
+    }
+
     // ------------EMPLOYEE/STAFF------------
     @GetMapping("/staff_list")
     public String getStaffPage(Model model) {
